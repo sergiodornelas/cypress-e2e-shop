@@ -28,17 +28,17 @@ git clone https://github.com/sergiodornelas/cypress-e2e-shop.git
 cd cypress-e2e-shop
 ```
 
-#### _Para instalar as dependencias_:
+#### _Instalação de dependencias_:
 ```
 npm install 
 ```
 
-#### _Para executar em moodo Headlesss via console_:
+#### _Execução do projeto em modo Headlesss via console_:
 ```
 npx cypress run
 ```
 
-#### _Para executar via Dashboard_:
+#### _Execução do projeto via Dashboard_:
 ```
 npx cypress open 
 ```
