@@ -136,4 +136,4 @@ dist
 .pnp.*
 
 #environment variables
-.cypress.env.json
+cypress.env.json
