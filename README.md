@@ -22,10 +22,10 @@
 
 #### _Execute os seguintes comandos via terminal_:
 ```  
-git clone https://github.com/EBAC-QE/testes-e2e-ebac-shop.git
+git clone https://github.com/sergiodornelas/cypress-e2e-shop.git
 ```
 ```
-cd testes-e2e-ebac-shop
+cd cypress-e2e-shop
 ```
 
 #### _Para instalar as dependencias_:
