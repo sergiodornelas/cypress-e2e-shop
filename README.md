@@ -8,4 +8,38 @@
 
 ## _Libs npm utilizadas:_
 ➫ Biblioteca Faker: [➚](https://www.npmjs.com/package/@faker-js/faker).
-<img align="right" alt="jr-pic" height="200" style="border-radius:50px;" src="https://user-images.githubusercontent.com/110427773/194069922-0be25680-1468-4d28-8b93-3777447d2b04.PNG">
+
+## _Clonando e executando em sua máquina:_
+
+### _Pré-requisitos_:
+
+➫ Node.js - https://nodejs.org/en/
+
+➫ Visual Studio Code - https://code.visualstudio.com/download
+
+➫ Git - https://git-scm.com/downloads
+
+
+#### _Execute os seguintes comandos via terminal_:
+```  
+git clone https://github.com/EBAC-QE/testes-e2e-ebac-shop.git
+```
+```
+cd testes-e2e-ebac-shop
+```
+
+#### _Para instalar as dependencias_:
+```
+npm install 
+```
+
+#### _Para executar em moodo Headlesss via console_:
+```
+npx cypress run
+```
+
+#### _Para executar via Dashboard_:
+```
+npx cypress open 
+```
+
