@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import '../../support/commands'
 
 beforeEach(() => {
   cy.visit("/minha-conta/");
@@ -8,9 +9,7 @@ describe('login', () => {
   const users = Cypress.env('users');
 
   it('1. login with valid credentials.', () => {
-    cy.get('[id="username"]').type(users[1].email, {log:false}), 
-    cy.get('[id="password"]').type(users[1].password, {log:false})
-    cy.get('input[type="submit"][name="login"]').click()
+    cy.LoginDataValid(users[1].email, users[1].password)
   });
 
   it('2. login with invalid credentials.', () => {
