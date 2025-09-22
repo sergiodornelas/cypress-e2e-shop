@@ -13,10 +13,10 @@ describe('login', () => {
   });
 
   it('2. login with invalid credentials.', () => {
-    cy.get('[id="username"]').type(users[0].email, {log:false}), 
-    cy.get('[id="password"]').type(users[0].password, {log:false})
+    cy.get('[id="username"]').type(users[0].email, { log: false }),
+    cy.get('[id="password"]').type(users[0].password, { log: false })
     cy.get('input[type="submit"][name="login"]').click()
-  }); 
+  });
 
   it('3. login with empty credentials.', () => {
     cy.get('[id="username"]')
@@ -25,14 +25,14 @@ describe('login', () => {
   });
 
   it('4. login with valid email and invalid password.', () => {
-    cy.get('[id="username"]').type(users[1].email, {log:false}), 
-    cy.get('[id="password"]').type(users[0].password, {log:false})
+    cy.get('[id="username"]').type(users[1].email, { log: false }),
+    cy.get('[id="password"]').type(users[0].password, { log: false })
     cy.get('input[type="submit"][name="login"]').click()
   });
 
-it('5. login with invalid email and valid password.', () => {
-    cy.get('[id="username"]').type(users[0].email, {log:false}), 
-    cy.get('[id="password"]').type(users[1].password, {log:false})
+  it('5. login with invalid email and valid password.', () => {
+    cy.get('[id="username"]').type(users[0].email, { log: false }),
+    cy.get('[id="password"]').type(users[1].password, { log: false })
     cy.get('input[type="submit"][name="login"]').click()
   });
 
