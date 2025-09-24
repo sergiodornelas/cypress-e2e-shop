@@ -1,4 +1,4 @@
-import '../../support/commands'
+import '../../support/commands';
 import { faker } from '@faker-js/faker';
 
 
@@ -12,22 +12,22 @@ describe('login', () => {
   const invalidPassword = faker.internet.password();
 
   it('1. login with valid credentials.', () => {
-    cy.FillForm(Cypress.env(auth).email, Cypress.env(auth).password)
+    cy.FillForm(Cypress.env(auth).email, Cypress.env(auth).password);
   });
 
   it('2. login with invalid credentials.', () => {
-    cy.FillForm(invalidEmail, invalidPassword)
+    cy.FillForm(invalidEmail, invalidPassword);
   });
 
   it('3. login with empty credentials.', () => {
-    cy.EmptyForm()
+    cy.EmptyForm();
   });
 
   it('4. login with valid email and invalid password.', () => {
-    cy.FillForm(Cypress.env(auth).email, invalidPassword)
+    cy.FillForm(Cypress.env(auth).email, invalidPassword);
   });
 
   it('5. login with invalid email and valid password.', () => {
-    cy.FillForm(invalidEmail, Cypress.env(auth).password)
+    cy.FillForm(invalidEmail, Cypress.env(auth).password);
   });
 });
