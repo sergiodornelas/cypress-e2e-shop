@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
 import cypress = require('cypress');
 import '../../support/commands'
-const authValid = Cypress.env('validUsers');
-const authInvalid = Cypress.env('invalidUsers');
+
 
 beforeEach(() => {
   cy.visit("/minha-conta/");
 });
 
 describe('login', () => {
-
+  const authValid = Cypress.env('validUsers');
+  const authInvalid = Cypress.env('invalidUsers');
   it('1. login with valid credentials.', () => {
     cy.LoginDataValid(Cypress.env(authValid).email, Cypress.env(authValid).password)
   });
@@ -35,5 +35,5 @@ describe('login', () => {
   it('5. login with invalid email and valid password.', () => {
     cy.get('[id="username"]').type(Cypress.env(authInvalid).email, { log: false }),
     cy.get('[id="password"]').type(Cypress.env(authValid).password, { log: false })
-}); 
+  });
 });
