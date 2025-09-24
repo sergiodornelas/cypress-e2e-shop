@@ -7,27 +7,27 @@ beforeEach(() => {
 });
 
 describe('login', () => {
-  const auth = Cypress.env('validUsers');
+  const auth = Cypress.env('user');
   const invalidEmail = faker.internet.email();
   const invalidPassword = faker.internet.password();
 
   it('1. login with valid credentials.', () => {
-    cy.FillForm(Cypress.env(auth).email, Cypress.env(auth).password);
+    cy.fillForm(Cypress.env(auth).email, Cypress.env(auth).password);
   });
 
   it('2. login with invalid credentials.', () => {
-    cy.FillForm(invalidEmail, invalidPassword);
+    cy.fillForm(invalidEmail, invalidPassword);
   });
 
   it('3. login with empty credentials.', () => {
-    cy.EmptyForm();
+    cy.emptyForm();
   });
 
   it('4. login with valid email and invalid password.', () => {
-    cy.FillForm(Cypress.env(auth).email, invalidPassword);
+    cy.fillForm(Cypress.env(auth).email, invalidPassword);
   });
 
   it('5. login with invalid email and valid password.', () => {
-    cy.FillForm(invalidEmail, Cypress.env(auth).password);
+    cy.fillForm(invalidEmail, Cypress.env(auth).password);
   });
 });
