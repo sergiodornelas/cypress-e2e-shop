@@ -3,6 +3,8 @@ import { faker } from '@faker-js/faker';
 
 
 beforeEach(() => {
+  cy.clearCookies();
+  cy.clearLocalStorage();
   cy.visit("/minha-conta/");
 });
 
