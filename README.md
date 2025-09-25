@@ -3,7 +3,7 @@
 ## _Projeto de automação de testes e2e com cypress e typescript (Em andamento)._
 
 
-➫ Aplicação utilizada: [Loja EBAC➚](http://lojaebac.ebaconline.art.br/).
+➫ Aplicação utilizada: [Loja➚](http://lojaebac.ebaconline.art.br/).
 
 
 ## _Libs npm utilizadas:_
