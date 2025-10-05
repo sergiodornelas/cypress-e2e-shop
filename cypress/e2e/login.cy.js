@@ -1,5 +1,5 @@
 import "../support/commands";
-const users = require("../fixtures/users");
+const users = require("../fixtures/login.json");
 
 beforeEach(() => {
   cy.clearCookies();
@@ -8,15 +8,18 @@ beforeEach(() => {
 });
 
 describe("login", () => {
+  const {EMAIL, PASSWORD} = Cypress.env('USER')
+  const {INVALID_EMAIL, INVALID_PASSWORD} =  users.DATA_INVALID
+
   it("1. should login successfully with valid credentials", () => {
-    cy.fillForm(users.valid.email, users.valid.password, { log: false });
+    cy.fillForm(EMAIL, PASSWORD, { log: false });
     cy.get("h1.page-title")
       .should("be.visible")
       .and("contain.text", "Minha conta");
   });
 
   it("2. should not login with completely invalid credentials", () => {
-    cy.fillForm(users.invalid.email, users.invalid.password);
+    cy.fillForm(INVALID_EMAIL, INVALID_PASSWORD, { log: false });
     cy.contains("Endereço de e-mail desconhecido.")
       .should("be.visible");
   });
@@ -28,13 +31,13 @@ describe("login", () => {
   });
 
   it("4. should not login with valid email and invalid password", () => {
-    cy.fillForm(users.valid.email, users.invalid.password, { log: false });
+    cy.fillForm(EMAIL, INVALID_PASSWORD, { log: false });
     cy.contains("Perdeu a senha?")
       .should("be.visible");
   });
 
   it("5. should not login with invalid email and valid password", () => {
-    cy.fillForm(users.invalid.email, users.valid.password, { log: false });
+    cy.fillForm(INVALID_EMAIL, PASSWORD, { log: false });
     cy.contains("Verifique novamente ou tente seu nome de usuário.")
       .should("be.visible");
   });
