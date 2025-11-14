@@ -1,5 +1,5 @@
 import "../support/commands";
-const users = require("../fixtures/login.json");
+import users from '../fixtures/login.json'
 
 beforeEach(() => {
   cy.clearCookies();
@@ -42,3 +42,5 @@ describe("login", () => {
       .should("be.visible");
   });
 });
+
+//npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
