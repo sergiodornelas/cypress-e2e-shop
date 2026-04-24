@@ -1,17 +1,16 @@
 # cypress-e2e-shop
 
-## _Projeto de automação de testes e2e com cypress e javascript (Em andamento)._
+## _End-to-end test automation project using Cypress and TypeScript (Ongoing).
+
+➫ Application used: [Loja➚](http://lojaebac.ebaconline.art.br/).
 
 
-➫ Aplicação utilizada: [Loja➚](http://lojaebac.ebaconline.art.br/).
+## _npm libraries used:_
+➫ Library Faker: [➚](https://www.npmjs.com/package/@faker-js/faker).
 
+## _Cloning and running on your machine:_
 
-## _Libs npm utilizadas:_
-➫ Biblioteca Faker: [➚](https://www.npmjs.com/package/@faker-js/faker).
-
-## _Clonando e executando em sua máquina:_
-
-### _Pré-requisitos_:
+### _Prerequisites_:
 
 ➫ Node.js - https://nodejs.org/en/
 
@@ -20,7 +19,7 @@
 ➫ Git - https://git-scm.com/downloads
 
 
-#### _Execute os seguintes comandos via terminal_:
+#### _Run the following commands in the terminal_:
 ```  
 git clone https://github.com/sergiodornelas/cypress-e2e-shop.git
 ```
@@ -28,17 +27,17 @@ git clone https://github.com/sergiodornelas/cypress-e2e-shop.git
 cd cypress-e2e-shop
 ```
 
-#### _Instalação de dependencias_:
+#### _Installation of dependences_:
 ```
 npm install 
 ```
 
-#### _Execução do projeto em modo Headlesss via console_:
+#### _Running the project in headless mode via the console_:
 ```
 npx cypress run
 ```
 
-#### _Execução do projeto via Dashboard_:
+#### _Project execution via the Dashboard_:
 ```
 npx cypress open 
 ```
