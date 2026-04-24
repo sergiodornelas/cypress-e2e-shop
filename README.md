@@ -1,6 +1,6 @@
 # cypress-e2e-shop
 
-## _End-to-end test automation project using Cypress and TypeScript (Ongoing).
+## End-to-end test automation project using Cypress and TypeScript (Ongoing).
 
 ➫ Application used: [Loja➚](http://lojaebac.ebaconline.art.br/).
 
