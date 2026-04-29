@@ -9,15 +9,16 @@ beforeEach(() => {
 
 describe("login", () => {
   const {EMAIL, PASSWORD} = Cypress.env('USER');
-  const fakeEmail = faker.internet.email();
-  const fakePassword = faker.internet.password();
+  const fakeEmail = faker.internet.email().toLowerCase();
+  const fakePassword = faker.internet.password({ length: 12, memorable: false });
 
-it("1. should authenticate the user when valid credentials are provided", () => {
+  it("1. should authenticate the user when valid credentials are provided", () => {
     cy.fillForm(EMAIL, PASSWORD);
     cy.submitLogin();
     cy.get("h1.page-title")
       .should("be.visible")
       .and("contain.text", "Minha conta");
+      cy.url().should("include", "/minha-conta/");
   });
 
   it("2. should block login when both email and password are invalid", () => {
@@ -46,9 +47,38 @@ it("1. should authenticate the user when valid credentials are provided", () => 
     cy.contains("Verifique novamente ou tente seu nome de usuário.")
       .should("be.visible");
   });
+
+  it("6. should preserve typed username after failed login", () => {
+    cy.fillForm(fakeEmail, fakePassword);
+    cy.submitLogin();
+    cy.get("#username").should("have.value", fakeEmail);
+  });
+  
+  it("7. should keep password input masked", () => {
+    cy.get("#password")
+      .should("have.attr", "type", "password")
+      .and("be.visible");
+  });
+
+  it("8. should logout successfully after valid login", () => {
+    cy.fillForm(EMAIL, PASSWORD);
+    cy.submitLogin();
+    cy.logout();
+    cy.url().should("include", "/minha-conta/");
+    cy.get("#username").should("be.visible");
+    cy.get('input[type="submit"][name="login"]').should("be.visible");
+  });
+
+
+  it("9. should allow toggling remember me option", () => {
+    cy.get("#rememberme").should("exist").and("not.be.checked");
+    cy.get("#rememberme").check({ force: true }).should("be.checked");
+    cy.get("#rememberme").uncheck({ force: true }).should("not.be.checked");
+  });
+
+
 })
 
-  
 
 
 //npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator

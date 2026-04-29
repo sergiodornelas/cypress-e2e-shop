@@ -4,5 +4,6 @@ declare namespace Cypress {
     fillPassword(password: string): Chainable<void>;
     submitLogin(): Chainable<void>;
     fillForm(email: string, password: string): Chainable<void>;
+    logout(): Chainable<void>;
   }
 }

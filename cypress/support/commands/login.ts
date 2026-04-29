@@ -17,3 +17,7 @@ Cypress.Commands.add('fillForm', (email: string, password: string) => {
   cy.get('[id="username"]').type(email);
   cy.get('[id="password"]').type(password);
 })
+
+Cypress.Commands.add('logout', () => {
+  cy.get("a[href*='customer-logout']").click();
+})
