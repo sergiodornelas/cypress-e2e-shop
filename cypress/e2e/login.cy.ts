@@ -37,7 +37,7 @@ describe("login", () => {
   it("4. should reject login when the email is valid but the password is incorrect", () => {
     cy.fillForm(EMAIL, fakePassword);
     cy.submitLogin();
-    cy.contains("Endereço de e-mail desconhecido.")
+    cy.contains("Erro: A senha fornecida para o e-mail sergiodornelasqa@gmail.com está incorreta.")
       .should("be.visible");
   });
 

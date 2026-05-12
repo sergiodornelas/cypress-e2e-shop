@@ -19,5 +19,8 @@ Cypress.Commands.add('fillForm', (email: string, password: string) => {
 })
 
 Cypress.Commands.add('logout', () => {
-  cy.get("a[href*='customer-logout']").click();
+  cy.get('li.woocommerce-MyAccount-navigation-link--customer-logout a, a[href*="customer-logout"]')
+    .filter(':visible')
+    .first()
+    .click()
 })
