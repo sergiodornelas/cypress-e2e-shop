@@ -1,4 +1,4 @@
-import "../support/commands";
+import "../../support/commands.ts";
 import { faker } from '@faker-js/faker';
 
 beforeEach(() => {
@@ -80,5 +80,5 @@ describe("login", () => {
 })
 
 
-
+//sdsadsa
 //npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
