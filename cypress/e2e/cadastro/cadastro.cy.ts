@@ -2,7 +2,8 @@ import "../support/commands";
 import { faker } from "@faker-js/faker";
 
 describe("register - account creation scenarios", () => {
-  const { EMAIL, PASSWORD } = Cypress.env("USER");
+  let email: string;
+  let password: string;
 
   const register = (email: string, password: string) => {
     cy.get("form.register #reg_email").clear().type(email);
@@ -14,6 +15,11 @@ describe("register - account creation scenarios", () => {
   const validPassword = () => faker.internet.password({ length: 12, memorable: false });
 
   beforeEach(() => {
+    cy.env(["USER"]).then(({ USER }: { USER: { EMAIL: string; PASSWORD: string } }) => {
+      email = USER.EMAIL;
+      password = USER.PASSWORD;
+    });
+
     cy.clearCookies();
     cy.clearLocalStorage();
     cy.visit("/minha-conta/");
@@ -32,7 +38,7 @@ describe("register - account creation scenarios", () => {
   });
 
   it("3. should block registration for duplicated email", () => {
-    register(EMAIL, PASSWORD);
+    register(email, password);
 
     cy.get("ul.woocommerce-error")
       .should("be.visible")

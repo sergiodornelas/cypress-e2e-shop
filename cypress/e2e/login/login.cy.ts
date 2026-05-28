@@ -1,19 +1,25 @@
 import "../../support/commands.ts";
 import { faker } from '@faker-js/faker';
 
-beforeEach(() => {
-  cy.clearCookies();
-  cy.clearLocalStorage();
-  cy.visit("/minha-conta/");
-});
-
 describe("login", () => {
-  const {EMAIL, PASSWORD} = Cypress.env('USER');
+  let email: string;
+  let password: string;
   const fakeEmail = faker.internet.email().toLowerCase();
   const fakePassword = faker.internet.password({ length: 12, memorable: false });
 
+  beforeEach(() => {
+    cy.env(["USER"]).then(({ USER }: { USER: { EMAIL: string; PASSWORD: string } }) => {
+      email = USER.EMAIL;
+      password = USER.PASSWORD;
+    });
+
+    cy.clearCookies();
+    cy.clearLocalStorage();
+    cy.visit("/minha-conta/");
+  });
+
   it("1. should authenticate the user when valid credentials are provided", () => {
-    cy.fillForm(EMAIL, PASSWORD);
+    cy.fillForm(email, password);
     cy.submitLogin();
     cy.get("h1.page-title")
       .should("be.visible")
@@ -35,14 +41,14 @@ describe("login", () => {
   });
 
   it("4. should reject login when the email is valid but the password is incorrect", () => {
-    cy.fillForm(EMAIL, fakePassword);
+    cy.fillForm(email, fakePassword);
     cy.submitLogin();
     cy.contains("Erro: A senha fornecida para o e-mail sergiodornelasqa@gmail.com está incorreta.")
       .should("be.visible");
   });
 
   it("5. should reject login when the password is valid but the email is invalid", () => {
-    cy.fillForm(fakeEmail, PASSWORD);
+    cy.fillForm(fakeEmail, password);
     cy.submitLogin();
     cy.contains("Verifique novamente ou tente seu nome de usuário.")
       .should("be.visible");
@@ -61,7 +67,7 @@ describe("login", () => {
   });
 
   it("8. should logout successfully after valid login", () => {
-    cy.fillForm(EMAIL, PASSWORD);
+    cy.fillForm(email, password);
     cy.submitLogin();
     cy.logout();
     cy.url().should("include", "/minha-conta/");

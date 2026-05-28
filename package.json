@@ -2,6 +2,7 @@
   "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^10.1.0",
+    "@types/node": "^25.9.1",
     "cypress": "^15.14.2",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.0.0",
