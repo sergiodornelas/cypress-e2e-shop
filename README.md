@@ -46,10 +46,10 @@ O projeto utiliza **Cypress** e **TypeScript**, seguindo uma arquitetura modular
 
 | Modo | Descrição | Comando |
 | :---------------------------- | :----------------------------------- | :--------------------------------------------------------- |
-| **Interativo (GUI)** | Abre o painel do Cypress | `npx cypress open` |
-| **Headless (terminal)** | Executa os testes no terminal e gera relatório | `npx cypress run` |
-| **Executar teste específico** | Define um arquivo alvo | `npx cypress run --spec "cypress/e2e/login/login.cy.ts"` |
-| **Com logs detalhados** | Executa com browser visível | `npx cypress run --browser chrome --headed` |
+| **Modo Assistido (Interface)** | Inicia a interface gráfica para executar testes visualmente | `npx cypress open` |
+| **Headless (terminal)** | Executa os testes no terminal em segundo plano | `npx cypress run` |
+| **Executar um teste específico** | Aponta o arquivo que será executado | `npx cypress run --spec "cypress/e2e/login/login.cy.ts"` |
+| **Modo interativo via linha de comando** | Executa com browser visível | `npx cypress run --browser chrome --headed` |
 
 Após execução em modo headless, o relatório HTML do Mochawesome é gerado em `cypress/results`.
 
