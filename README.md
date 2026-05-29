@@ -23,9 +23,9 @@ O projeto utiliza **Cypress** e **TypeScript**, seguindo uma arquitetura modular
 ---
 
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (incluído na instalação do Node.js).
+- [npm](https://www.npmjs.com/) (Incluído na instalação do Node.js).
 - [Git](https://git-scm.com/downloads)
-- [Visual Studio Code](https://code.visualstudio.com/) (recomendado).
+- [Visual Studio Code](https://code.visualstudio.com/) (Recomendado).
 - [Google Chrome](https://www.google.com/chrome/)
 
 ---
