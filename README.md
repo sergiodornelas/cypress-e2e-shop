@@ -33,10 +33,10 @@ O projeto utiliza **Cypress** e **TypeScript**, seguindo uma arquitetura modular
 
 | Etapa | Descrição | Comando |
 | :------------------------------------------- | :--------------------------------- | :------------------------------------------------------------------------ |
-| **Clonar o repositório** | Dowload local do projeto | `git clone https://github.com/sergiodornelas/cypress-e2e-shop.git` |
-| **Acessar diretório** | Acessa a pasta do projeto | `cd cypress-e2e-shop` |
-| **Instalar dependências** | Instala Cypress, TypeScript, Faker e demais pacotes | `npm install` |
-| **Configurar credenciais** | Cria o arquivo de ambiente local | Copiar `cypress.env.example.json` → `cypress.env.json` e preencher `USER` |
+| **Clonar o repositório** | Dowload local do projeto. | `git clone https://github.com/sergiodornelas/cypress-e2e-shop.git` |
+| **Acessar diretório** | Acessa a pasta do projeto. | `cd cypress-e2e-shop` |
+| **Instalar dependências** | Instala Cypress, TypeScript, Faker e demais pacotes. | `npm install` |
+| **Configurar credenciais** | Cria o arquivo de ambiente local | Copiar. `cypress.env.example.json` → `cypress.env.json` e preencher `USER` |
 
 
 ---
@@ -46,10 +46,10 @@ O projeto utiliza **Cypress** e **TypeScript**, seguindo uma arquitetura modular
 
 | Modo | Descrição | Comando |
 | :---------------------------- | :----------------------------------- | :--------------------------------------------------------- |
-| **Modo Assistido (Interface)** | Inicia a interface gráfica para executar testes visualmente | `npx cypress open` |
-| **Headless (terminal)** | Executa os testes no terminal em segundo plano | `npx cypress run` |
-| **Executar um teste específico** | Aponta o arquivo que será executado | `npx cypress run --spec "cypress/e2e/login/login.cy.ts"` |
-| **Modo interativo via linha de comando** | Executa com browser visível | `npx cypress run --browser chrome --headed` |
+| **Modo Assistido (Interface)** | Inicia a interface gráfica para executar testes visualmente. | `npx cypress open` |
+| **Headless (terminal)** | Executa os testes no terminal em segundo plano. | `npx cypress run` |
+| **Executar um teste específico** | Aponta o arquivo que será executado. | `npx cypress run --spec "cypress/e2e/login/login.cy.ts"` |
+| **Modo interativo via linha de comando** | Executa com browser visível. | `npx cypress run --browser chrome --headed` |
 
 Após execução em modo headless, o relatório HTML do Mochawesome é gerado em `cypress/results`.
 
@@ -128,26 +128,26 @@ O projeto adota uma arquitetura modular, escalável e de alta manutenibilidade, 
 
 ## Suítes de teste
 
-### Suíte – Criar Conta de Usuário (`cadastro.cy.ts`)
+### Funcionalidade – Criar Conta de Usuário (`cadastro.cy.ts`)
 
-- Deve criar uma nova conta com dados válidos. 
-- Deve bloquear cadastro com e-mail já registrado.
-- Deve exibir erro ao tentar cadastrar com formulário vazio  .
-- Deve exibir erro quando a senha não é informada.  
-- Deve exibir erro quando o e-mail não é informado.
+- CT001: Deve criar uma nova conta com dados válidos. 
+- CT002: Deve bloquear cadastro com e-mail já registrado.
+- CT003:Deve exibir erro ao tentar cadastrar com formulário vazio  .
+- CT004:Deve exibir erro quando a senha não é informada.  
+- CT005: Deve exibir erro quando o e-mail não é informado.
 
-### Suíte – Testes de Login (`login.cy.ts`)
+### Funcionalidade – Login (`login.cy.ts`)
 
-- Deve autenticar o usuário com credenciais válidas.  
-- Deve bloquear login com e-mail e senha inválidos.  
-- Deve exibir erro de campo obrigatório ao enviar credenciais vazias.  
-- Deve rejeitar login com e-mail válido e senha incorreta.  
-- Deve rejeitar login com e-mail inválido e senha válida.  
-- Deve preservar o usuário digitado após falha de login.  
-- Deve manter o campo senha mascarado (`type="password"`)  
-- Deve realizar logout com sucesso após login válido. 
+- CT001: Deve autenticar o usuário com credenciais válidas.  
+- CT002: Deve bloquear login com e-mail e senha inválidos.  
+- CT003:Deve exibir erro de campo obrigatório ao enviar credenciais vazias.  
+- CT004: Deve rejeitar login com e-mail válido e senha incorreta.  
+- CT005: Deve rejeitar login com e-mail inválido e senha válida.  
+- CT006: Deve preservar o usuário digitado após falha de login.  
+- CT007: Deve manter o campo senha mascarado (`type="password"`)  
+- CT008: Deve realizar logout com sucesso após login válido. 
 
-### Suíte – Carrinho de Compras (`carrinho.cy.ts`)
+### Funcionalidade – Carrinho de Compras (`carrinho.cy.ts`)
 
 - Em desenvolvimento.  
 
