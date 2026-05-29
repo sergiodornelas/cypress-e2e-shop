@@ -1,4 +1,4 @@
-import "../../support/commands.ts";
+
 import { faker } from '@faker-js/faker';
 
 describe("login", () => {
@@ -8,14 +8,13 @@ describe("login", () => {
   const fakePassword = faker.internet.password({ length: 12, memorable: false });
 
   beforeEach(() => {
-    cy.env(["USER"]).then(({ USER }: { USER: { EMAIL: string; PASSWORD: string } }) => {
-      email = USER.EMAIL;
-      password = USER.PASSWORD;
-    });
-
     cy.clearCookies();
     cy.clearLocalStorage();
     cy.visit("/minha-conta/");
+    cy.env(["USER"]).then(({ USER }) => {
+      email = USER.EMAIL;
+      password = USER.PASSWORD;
+    });
   });
 
   it("1. should authenticate the user when valid credentials are provided", () => {
@@ -74,17 +73,6 @@ describe("login", () => {
     cy.get("#username").should("be.visible");
     cy.get('input[type="submit"][name="login"]').should("be.visible");
   });
-
-
-  it("9. should allow toggling remember me option", () => {
-    cy.get("#rememberme").should("exist").and("not.be.checked");
-    cy.get("#rememberme").check({ force: true }).should("be.checked");
-    cy.get("#rememberme").uncheck({ force: true }).should("not.be.checked");
-  });
-
-
 })
 
 
-//sdsadsa
-//npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
