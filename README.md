@@ -1,6 +1,6 @@
 #  Projeto – EBAC SHOP
 
-Projeto de automação de testes E2E **EBAC SHOP**, uma loja virtual de e-commerce criada para uso didático, cobrindo os fluxos de login, cadastro e carrinho de compras.  
+Projeto de automação de testes E2E **EBAC SHOP**, uma loja virtual de e-commerce criada para uso didático, cobrindo o fluxo das funcionalidades de login, cadastro e carrinho de compras.  
 
 O projeto utiliza **Cypress** e **TypeScript**, seguindo uma arquitetura modular com **Custom Commands**, **tipagem de ambiente**, geração de dados dinâmicos via **Faker.js** e relatórios HTML via **Mochawesome**.
 
