@@ -149,7 +149,7 @@ O projeto adota uma arquitetura modular, escalável e de alta manutenibilidade, 
 
 ### Funcionalidade – Carrinho de Compras (`carrinho.cy.ts`)
 
-- Em desenvolvimento.  
+- Em desenvolvimento.sss
 
 ---
 
